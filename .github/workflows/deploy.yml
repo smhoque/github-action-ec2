@@ -27,6 +27,10 @@ jobs:
           echo "--- Connected to EC2 ---"
           echo "User: $(whoami)"
           echo "Home: $HOME"
+          
+          echo "--- Installing required system packages ---"
+          sudo apt-get update -y
+          sudo apt-get install -y libatomic1 build-essential
 
           # Install NVM if missing
           if ! command -v nvm &> /dev/null; then
